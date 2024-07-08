@@ -1,0 +1,10 @@
+services:
+  private-gpt:
+    image: ghcr.io/k8scat/private-gpt:gemini-latest
+    volumes:
+      - ./local_data/:/home/worker/app/local_data
+    ports:
+      - 8080:8080
+    environment:
+      PORT: 8080
+      PGPT_PROFILES: gemini
